@@ -137,7 +137,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 
 source /opt/ros/humble/setup.zsh
-source ~/ros_ws/install/setup.zsh
+# source ~/ros_ws/install/setup.zsh
 export RMW_IMPLEMENTATION=rmw_fastrtps_cpp
 export LC_NUMERIC=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
@@ -145,30 +145,15 @@ export IGNITION_VERSION=fortress
 export GZ_VERSION=fortress
 #export COPPELIASIM_ROOT_DIR=/home/hydran00/CoppeliaSim
 export ROS_DISTRO=humble
-. "$HOME/.cargo/env"
+# . "$HOME/.cargo/env"
 
-
-LAB_DOCKER_PATH="/home/hydran00/lab-docker"
-eval "$(register-python-argcomplete3 lab-docker.py)"
-export PATH=$LAB_DOCKER_PATH:$PATH
-alias lab='lab-docker.py --api run   -f  -nv e70fa13ee6a3'
-alias dock-other='lab-docker.py attach'
-alias dock-root='lab-docker.py attach --root'
-alias coppelia='source ~/CoppeliaSim/coppeliaSim.sh'
-
-alias dockerlab='docker run  -v /tmp/.X11-unix/:/tmp/.X11-unix/ -v /home/hydran00/orc:/home/student/assignment --name ubuntu_bash --env="DISPLAY=$DISPLAY" --privileged -p 127.0.0.1:7000:7000 --shm-size 2g --rm -i -t --user=student --workdir=/home/student andreadelprete/orc23:latest bash'
 
 alias use_bash='chsh -s $(which bash)'
 alias use_zsh='chsh -s $(which zsh)'
 
-#Haptic device
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/hydran00/haption/src/haption_raptor_api/Dependencies/RaptorAPI/bin/Linux/glibc-2.35/
-export PATH=/usr/local/go/bin:$PATH
-#source $HOME/ros2_ws/install/setup.zsh  
-# source $HOME/controller_ws/install/setup.zsh
-# source $HOME/shelfino_ws/install/setup.zsh
+alias .='source'
 
-eval `dircolors ~/.dir_colors/dircolors`
+# eval `dircolors ~/.dir_colors/dircolors`
 eval "$(register-python-argcomplete3 ros2)"
 eval "$(register-python-argcomplete3 colcon)"
 prompt_context() {} 
