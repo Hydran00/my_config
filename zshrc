@@ -78,7 +78,7 @@ ENABLE_CORRECTION="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting zsh-autocomplete)
+plugins=(git zsh-syntax-highlighting fast-syntax-highlighting zsh-autocomplete zsh-autosuggestions)
 
 
 source $ZSH/oh-my-zsh.sh
@@ -135,7 +135,9 @@ alias l='ls -CF'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
-
+bindkey '^ ' autosuggest-accept
+# change menu scroll to tab
+bindkey '\t' menu-complete
 
 source /opt/ros/humble/setup.zsh
 # source ~/ros_ws/install/setup.zsh
