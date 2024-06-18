@@ -135,9 +135,14 @@ alias l='ls -CF'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
+# ctrl+space accept autosuggestion
 bindkey '^ ' autosuggest-accept
-# change menu scroll to tab
-bindkey '\t' menu-complete
+
+# tab enters menu, shift+tab enters the menu first option
+bindkey '^I' menu-select
+# tab switches selected option
+bindkey -M menuselect '^I' menu-complete
+bindkey "$terminfo[kcbt]" reverse-menu-complete
 
 source /opt/ros/humble/setup.zsh
 # source ~/ros_ws/install/setup.zsh
