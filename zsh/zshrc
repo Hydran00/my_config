@@ -151,10 +151,10 @@ export LC_NUMERIC=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 export IGNITION_VERSION=fortress
 export GZ_VERSION=fortress
-#export COPPELIASIM_ROOT_DIR=/home/hydran00/CoppeliaSim
+# export COPPELIASIM_ROOT_DIR=~/CoppeliaSim
 export ROS_DISTRO=humble
-# . "$HOME/.cargo/env"
-
+# Enable colorized warn and error messages
+export RCUTILS_COLORIZED_OUTPUT=1
 
 alias use_bash='chsh -s $(which bash)'
 alias use_zsh='chsh -s $(which zsh)'
